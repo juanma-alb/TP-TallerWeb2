@@ -1,6 +1,6 @@
 # TP-TallerWeb2
 
-# Intgrantes:
+# Integrantes:
 
 - Lautaro Desouches
 - Agustin Anichini
