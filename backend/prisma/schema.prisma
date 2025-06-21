@@ -1,0 +1,26 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Usuario {
+  id        Int    @id @default(autoincrement())
+  email     String @unique
+  password  String
+  firstName String
+  lastName  String
+  address   String
+
+  createdAt DateTime @default(now()) // Guarda la fecha y hora en la que se creó el registro.
+  updatedAt DateTime @updatedAt // Guarda la fecha y hora en la que se actualizó por última vez el registro.
+}
+ 
+// npx prisma db push --> Sincroniza el esquema directamente con la base de datos (no crea migraciones)
+// npx prisma migrate dev --name init  --> Crea una migración con SQL, aplica cambios y guarda historial
